@@ -46,6 +46,19 @@ enum
 #define log_error(...) log_log (LOG_ERROR, __FILE__, __LINE__, __VA_ARGS__)
 #define log_fatal(...) log_log (LOG_FATAL, __FILE__, __LINE__, __VA_ARGS__)
 
+/* FILE *db_fp = fopen("db.log", "a"); */
+/* FILE *net_fp = fopen("net.log", "a"); */
+/* int db_log = log_add_fp(db_fp, LOG_INFO); */
+/* int net_log = log_add_fp(net_fp, LOG_INFO); */
+/* log_info_id(db_log, "query took %d ms", 42); */
+/* log_warn_id(net_log, "connection dropped"); */
+#define log_trace_id(id, ...) log_log_id (id, LOG_TRACE, __FILE__, __LINE__, __VA_ARGS__)
+#define log_debug_id(id, ...) log_log_id (id, LOG_DEBUG, __FILE__, __LINE__, __VA_ARGS__)
+#define log_info_id(id, ...) log_log_id (id, LOG_INFO, __FILE__, __LINE__, __VA_ARGS__)
+#define log_warn_id(id, ...) log_log_id (id, LOG_WARN, __FILE__, __LINE__, __VA_ARGS__)
+#define log_error_id(id, ...) log_log_id (id, LOG_ERROR, __FILE__, __LINE__, __VA_ARGS__)
+#define log_fatal_id(id, ...) log_log_id (id, LOG_FATAL, __FILE__, __LINE__, __VA_ARGS__)
+
 const char *log_level_string (int level);
 void log_set_lock (log_LockFn fn, void *udata);
 void log_set_level (int level);
