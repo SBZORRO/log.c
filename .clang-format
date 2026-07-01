@@ -1,0 +1,12 @@
+BasedOnStyle: GNU
+Language: C
+ColumnLimit: 0
+ContinuationIndentWidth: 2
+IndentWidth: 2
+UseTab: Never
+BreakBeforeBraces: GNU
+AlwaysBreakAfterReturnType: TopLevelDefinitions
+SpaceBeforeParens: Always
+IncludeBlocks: Preserve
+SortIncludes: false
+MaxEmptyLinesToKeep: 1
